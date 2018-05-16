@@ -1,11 +1,11 @@
-package EarthquakeMap;
+package earthquakeAlert;
 
 
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import processing.core.PGraphics;
 
-/*
+/**
  *A common marker for cities and earthquakes on an earthquake map
  */
 public abstract class CommonMarker extends SimplePointMarker {
@@ -20,18 +20,23 @@ public abstract class CommonMarker extends SimplePointMarker {
 		super(location, properties);
 	}
 	
-	// Getter method for clicked field
+	/**
+	 *  Getter method for clicked field
+	 * @return
+	 */
 	public boolean getClicked() {
 		return clicked;
 	}
 	
-	// Setter method for clicked field
+	/**
+	 *  Setter method for clicked field
+	 * @param state
+	 */
 	public void setClicked(boolean state) {
 		clicked = state;
 	}
 	
 	public void draw(PGraphics pg, float x, float y) {
-		// For starter code just drawMaker(...)
 		if (!hidden) {
 			drawMarker(pg, x, y);
 			if (selected) {
